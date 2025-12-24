@@ -57,7 +57,7 @@ class ShodanCrawler:
         self.bitstack_file = os.path.join(self.result_folder, "bitstack")
         self.result_file = os.path.join(self.result_folder, "result.db")
         
-        self.logger = get_logger("shodan", folder=self.result_folder)
+        self.logger = get_logger("shodan", folder=os.path.join(self.result_folder, "log"))
 
         self.sql_connection = None
         self.sql_cursor = None

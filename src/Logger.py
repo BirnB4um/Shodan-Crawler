@@ -2,7 +2,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 import os
 
-def get_logger(name:str, folder:str="logs") -> logging.Logger:
+def get_logger(name:str, folder:str="log") -> logging.Logger:
     os.makedirs(folder, exist_ok=True)
 
     logger = logging.getLogger(name)
