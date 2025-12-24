@@ -334,7 +334,6 @@ class ShodanCrawler:
         """
         Crawl generator.  
         Starts the search given a query.  
-        The query should not use the 'net' filter, although it would still work.  
         """
 
         while True:
@@ -379,9 +378,13 @@ class ShodanCrawler:
 
     def crawl(self, query:str, from_beginning:bool=False):
         """
-        example query: "product:minecraft port:25565"  
         Start crawling with given base query.  
-        If from_beginning is True, starts a new crawl and ignores existing bitstack file.
+        The query should not use the 'net' filter, although it would still work.
+        
+        :param query: Base Shodan query to crawl.
+        :type query: str
+        :param from_beginning: If True, starts a new crawl and ignores existing bitstack file.
+        :type from_beginning: bool
         """
         
         os.makedirs(self.result_folder, exist_ok=True)
