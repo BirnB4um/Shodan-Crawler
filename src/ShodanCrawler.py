@@ -129,7 +129,7 @@ class ShodanCrawler:
                 return num_results
             except Exception as e:
                 self.logger.info(f"API count: {query}")
-                self.logger.error(f"{str(e)}", exc_info=True)
+                self.logger.error(f"API count Error: {str(e)}", exc_info=True)
 
         raise RuntimeError("Too many tries for count API.")
     
@@ -214,7 +214,7 @@ class ShodanCrawler:
                 return
             except Exception as e:
                 self.logger.info(f"API search: {query}")
-                self.logger.error(f"{str(e)}", exc_info=True)
+                self.logger.error(f"API search Error: {str(e)}", exc_info=True)
                 time.sleep(self.api_search_delay * 2**t)
 
         self.logger.error(f"Failed to collect results for query: {query}")
@@ -411,6 +411,7 @@ class ShodanCrawler:
                     break
                 except Exception as e:
                     self.logger.error(f"Error while crawling: {str(e)} (Try {t+1}/3)", exc_info=True)
+                    time.sleep(60*60)
 
             self.sql_connection = None
             self.sql_cursor = None
