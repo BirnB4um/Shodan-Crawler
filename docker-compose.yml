@@ -1,0 +1,17 @@
+
+
+services:
+
+  shodan-crawler:
+    build: .
+    container_name: shodan-crawler
+    image: shodan-crawler
+    restart: unless-stopped
+
+    volumes:
+      - ./data/:/opt/shodan-crawler/data/
+
+      # - ./src/:/opt/shodan-crawler/src/ # for DEV
+
+    env-file:
+      - ./.env
