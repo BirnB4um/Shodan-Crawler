@@ -13,5 +13,5 @@ services:
 
       # - ./src/:/opt/shodan-crawler/src/ # for DEV
 
-    env-file:
-      - ./.env
+    env_file:
+      - .env
