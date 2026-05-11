@@ -1,4 +1,4 @@
 # Minute Hour DayOfMonth Month DayOfWeek
-TZ=Europe/Berlin
+BASH_ENV=/etc/environment
 
 0 0 * * 1 root cd /opt/shodan-crawler/src && /usr/local/bin/python script.py
